@@ -1,0 +1,15 @@
+<h2>Add Product</h2>
+
+<form method="POST" action="/products/add">
+  <input type="text" name="product_name" placeholder="Product Name" required />
+
+  <select name="category_id" required>
+    <% categories.forEach(c => { %>
+
+    <option value="<%= c.category_id %>"><%= c.category_name %></option>
+
+    <% }) %>
+  </select>
+
+  <button type="submit">Save</button>
+</form>

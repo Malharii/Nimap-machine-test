@@ -1,0 +1,12 @@
+<h2>Category List</h2>
+
+<a href="/categories/add"> Add Category </a>
+
+<ul>
+  <% categories.forEach(c => { %>
+
+  <li><%= c.category_name %></li>
+
+  <% }) %>
+</ul>
+<a href="/products">Go to Products</a>

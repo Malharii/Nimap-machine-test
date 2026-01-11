@@ -1,0 +1,30 @@
+<h2>Product List</h2>
+
+<a href="/products/add">Add Product</a>
+
+<table border="1" cellpadding="5">
+  <tr>
+    <th>Product ID</th>
+
+    <th>Product Name</th>
+    <th>Category ID</th>
+    <th>Category Name</th>
+  </tr>
+
+  <% products.forEach(p => { %>
+
+  <tr>
+    <td><%= p.product_id %></td>
+    <td><%= p.product_name %></td>
+
+    <td><%= p.category_id %></td>
+    <td><%= p.category_name %></td>
+  </tr>
+  <% }) %>
+</table>
+
+<br />
+
+<a href="/products?page=<%= page - 1 %>">Prev</a>
+|
+<a href="/products?page=<%= page + 1 %>">Next</a>
