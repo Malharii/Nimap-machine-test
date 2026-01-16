@@ -1,15 +1,28 @@
-<h2>Add Product</h2>
+<h2>Product List</h2>
 
-<form method="POST" action="/products/add">
-  <input type="text" name="product_name" placeholder="Product Name" required />
+<a href="/products/add">Add Product</a>
 
-  <select name="category_id" required>
-    <% categories.forEach(c => { %>
+<table border="1" cellpadding="5">
+  <tr>
+    <th>Product ID</th>
+    <th>Product Name</th>
+    <th>Category ID</th>
+    <th>Category Name</th>
+  </tr>
 
-    <option value="<%= c.category_id %>"><%= c.category_name %></option>
+  <% products.forEach(p => { %>
+  <tr>
+    <td><%= p.product_id %></td>
+    <td><%= p.product_name %></td>
+    <td><%= p.category_id %></td>
+    <td><%= p.category_name %></td>
+  </tr>
+  <% }) %>
+</table>
 
-    <% }) %>
-  </select>
+<br />
 
-  <button type="submit">Save</button>
-</form>
+<% if (page > 1) { %>
+<a href="/products?page=<%= page - 1 %>">Prev</a>
+<% } %> |
+<a href="/products?page=<%= page + 1 %>">Next</a>

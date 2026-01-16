@@ -3,15 +3,10 @@ const mysql = require("mysql2");
 const db = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "password",
+  password: "malhar@9",
   database: "nimap_machine_test",
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error("Error connecting to the db:", err);
-    return;
-  }
-  console.log("Connected to the MySQL db.");
-});
+console.log("MySQL pool initialized");
+
 module.exports = db;
